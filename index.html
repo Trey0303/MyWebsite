@@ -9,11 +9,27 @@
             background: rgb(109, 109, 109);
             color: white;
             font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: blue;
+            padding: 40px 20px 10px 50px;
+        }
+        section{
+            background-color: bisque;
+            color: green;
+            padding: 20px;
+            
+
+        }
+        footer{
+            background-color: red;
+            padding: 40px;
         }
         h1 {
-            background-color: bisque;
+            color: bisque;
             display: inline-block;
-            color: blue;
             opacity: 0.5;
         }
         h2{
@@ -25,23 +41,100 @@
         button{
             background-color: orange;
             color: blueviolet;
-            border: none;
+            border-width: 1px;
             border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            
         }
+        button:active{
+            background-color: rgb(194, 126, 0);
+            color: rgb(221, 193, 247);
+        }
+        div{
+            background-color: brown;
+            color: aliceblue;
+            margin:auto;
+            width: 100px;
+        }
+        textarea{
+            text-shadow: "shadow text";
+        }
+        video{
+            margin: 0;
+            padding: 0;
+        }
+        .noResize{
+            resize: none;
+        }
+        .row{
+            display:flex;
+            flex-direction: row;
+        }
+        .customUL{
+            padding:0;
+            margin:0;
+            list-style-type: none;
+        }
+        .liInline{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
         
     </style>
 </head>
 <body>
-    <h1> MyWebsite</h1>
-    <h2>mhm</h2>
-    <p>testing</p>
-    <img src = "Images\apple.png" width = "400" height = "300"> <br> <br>
-    <button>button</button>
-    <ul>
-        <li>apple</li>
-        <li>orange</li>
-        <li>pear</li>
-        <li>banana</li>
-    </ul>
+    <header>
+        <h1>header</h1>
+        <nav>
+            <ul class = "customUL">
+                <li class="liInline">Home</li>
+                <li class="liInline">Locations</li>
+                <li class="liInline">contact</li>
+            </ul>
+        </nav>
+
+    </header>
+    <section>
+        triple section
+        <h1> MyWebsite</h1>
+        <h2>mhm</h2>
+        <p>testing</p>
+        <img src = "Images\apple.png" width = "400" height = "300"> <br> <br>
+        <iframe width="720" height = "400" src = "https://www.youtube.com/embed/aactUKHgsh0" ></iframe>
+        <audio  id = "myAudio" src = "Sound/Jump1.wav" preload="auto"></audio>
+            <br>
+        <button onclick="clickAudio()">PRESS IT</button>
+        <script>
+            var sfx = document.getElementById("myAudio");
+            function clickAudio(){
+                sfx.currentTime = 0;
+                sfx.play();
+            }
+        </script>
+        <br> <br>
+        <textarea placeholder="NOT resizeable" class="noResize"></textarea>
+        <br>
+        <textarea placeholder="resizable"></textarea>
+    </section>
+    <section class="row">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+    </section>
+    <section>
+        lower section
+        <ul>
+            <li>apple</li>
+            <li>orange</li>
+            <li>pear</li>
+            <li>banana</li>
+        </ul>
+    </section>
+    <footer>footer</footer>
+    
+    
+    
 </body>
 </html>
